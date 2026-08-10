@@ -1,0 +1,324 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.dashboard{
+
+    width:92%;
+    max-width:1450px;
+
+    margin:40px auto 60px;
+
+}
+
+.page-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header{
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-header h1{
+
+    font-size:36px;
+
+    color:#1F2937;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-header p{
+
+    color:#6B7280;
+
+    font-size:16px;
+
+}
+
+.page-header{
+
+    margin-bottom:30px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+    color:#222;
+
+}
+
+.page-header p{
+
+    margin-top:10px;
+
+    color:#666;
+
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:24px;
+
+    margin:35px 0;
+
+}
+
+.stat-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #E5E7EB;
+
+    border-radius:16px;
+
+    padding:28px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.05);
+
+    transition:all .25s ease;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+}
+
+.stat-title{
+
+    color:#6B7280;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:16px;
+
+}
+
+.stat-value{
+
+    font-size:46px;
+
+    font-weight:700;
+
+    color:#D71920;
+
+    line-height:1;
+
+}
+
+.dashboard-header{
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-header h1{
+
+    font-size:36px;
+
+    color:#1F2937;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-header p{
+
+    color:#6B7280;
+
+    font-size:16px;
+
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:28px;
+
+}
+
+#search{
+
+    flex:1;
+
+    padding:15px 18px;
+
+    border:1px solid #D1D5DB;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+
+#refreshBtn{
+
+    width:170px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+#refreshBtn:hover{
+
+    background:#B31217;
+
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+th{
+    background:#D71920;
+    color:white;
+    padding:20px;
+    letter-spacing:.3px;
+    text-align:left;
+    font-size:14px;
+    font-weight:600;
+}
+
+td{
+    padding:20px;
+    border-bottom:1px solid #E5E7EB;
+    font-size:14px;
+}
+
+tbody tr:nth-child(even){
+
+    background:#FAFAFA;
+
+}
+
+tr{
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+tr:hover{
+
+background:#F3F4F6;
+
+}
+
+#search:focus{
+
+    outline:none;
+
+    border-color:#D71920;
+
+    box-shadow:0 0 0 3px rgba(215,25,32,.10);
+
+}
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.received{
+
+    background:#DBEAFE;
+    color:#1D4ED8;
+
+}
+
+.progress{
+
+    background:#DCFCE7;
+    color:#15803D;
+
+}
+
+.waiting{
+
+    background:#FEF3C7;
+    color:#B45309;
+
+}
+
+.completed{
+
+    background:#FCE7F3;
+    color:#BE185D;
+
+}
+
+.collected{
+
+    background:#EDE9FE;
+    color:#6D28D9;
+
+}

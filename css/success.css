@@ -1,0 +1,72 @@
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+.success-card{
+
+    width:450px;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+    text-align:center;
+
+}
+
+.success-icon{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.success-text{
+
+    margin:10px 0 30px;
+
+    color:#666;
+
+}
+
+.summary-box{
+
+    background:#fafafa;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:30px;
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:15px 0;
+
+    font-size:18px;
+
+}
+

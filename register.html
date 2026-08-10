@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrackLab - Register Component</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/register.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="header">
+
+        <h1>TrackLab</h1>
+
+        <p>Danfoss Material Movement Tracker</p>
+
+    </div>
+
+    <div class="component-card">
+
+        <h2>Register New Component</h2>
+
+        <p class="form-subtitle">
+
+            Fill in the details below to register a new component.
+
+        </p>
+
+        <div class="info">
+
+            <label for="componentDescription">
+                Component Description
+            </label>
+
+            <input
+                id="componentDescription"
+                type="text"
+                placeholder="Enter component description">
+
+
+            <label for="taskDescription">
+                Requested Task
+            </label>
+
+            <textarea
+                id="taskDescription"
+                rows="3"
+                placeholder="Enter requested task"></textarea>
+
+
+            <label for="trNumber">
+                Test Request (TR) Number
+            </label>
+
+            <input
+                id="trNumber"
+                type="text"
+                placeholder="Enter TR Number">
+
+
+            <label for="assignedLab">
+                Assigned Lab
+            </label>
+
+            <select id="assignedLab">
+
+                <option value="">
+                    Select Assigned Lab
+                </option>
+
+                <option>Materials Lab</option>
+
+                <option>Metrology Lab</option>
+
+                <option>Teardown Lab</option>
+
+                <option>General Storage Area</option>
+
+            </select>
+
+
+            <label for="currentArea">
+                Current Lab
+            </label>
+
+            <select id="currentArea">
+
+                <option value="">
+                    Select Current Lab
+                </option>
+
+                <option>Materials Lab</option>
+
+                <option>Metrology Lab</option>
+
+                <option>Teardown Lab</option>
+
+                <option>General Storage Area</option>
+
+            </select>
+
+
+            <label for="currentZone">
+                Current Zone
+            </label>
+
+            <select id="currentZone">
+
+                <option value="">
+                    Select Current Zone
+                </option>
+
+            </select>
+
+
+            <label for="registeredBy">
+                Registered By (Email)
+            </label>
+
+            <input
+                id="registeredBy"
+                type="email"
+                placeholder="name@danfoss.com">
+
+
+            <label for="comments">
+                Comments
+            </label>
+
+            <textarea
+                id="comments"
+                rows="4"
+                placeholder="Additional comments (Optional)"></textarea>
+
+
+            <button id="registerBtn">
+
+                Register Component
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/register.js"></script>
+
+</body>
+
+</html>

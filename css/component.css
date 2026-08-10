@@ -1,0 +1,89 @@
+/* =========================
+   COMPONENT PAGE
+========================= */
+
+.component-card{
+
+    width:100%;
+
+    background:#fff;
+
+    padding:24px;
+
+    border-radius:18px;
+
+    border:1px solid #ECECEC;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+
+    overflow-x:auto;
+
+}
+
+.component-card h2{
+
+    margin-bottom:10px;
+
+}
+
+.component-card p{
+
+    margin-bottom:25px;
+
+    color:#666;
+
+}
+
+#movementHistory{
+
+    margin-top:25px;
+
+    border-top:1px solid #ddd;
+
+    padding-top:20px;
+
+}
+
+.history-item{
+
+    padding:12px;
+
+    background:#fafafa;
+
+    border-left:4px solid #D71920;
+
+    border-radius:8px;
+
+    margin-bottom:12px;
+
+}
+
+.history-card{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+}
+
+.history-date{
+
+    font-weight:bold;
+
+    color:#0078d4;
+
+    margin-bottom:10px;
+
+}
+
+.history-row{
+
+    margin:5px 0;
+
+}

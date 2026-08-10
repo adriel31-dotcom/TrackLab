@@ -1,0 +1,58 @@
+.container{
+
+    width:100%;
+    max-width:420px;
+
+    margin:60px auto;
+
+    padding:20px;
+
+}
+
+.home-logo{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.home-logo h1{
+
+    color:#D71920;
+
+    font-size:42px;
+
+    margin-bottom:8px;
+
+}
+
+.home-logo p{
+
+    color:#666;
+
+    font-size:17px;
+
+}
+
+.menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+footer{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#888;
+
+}

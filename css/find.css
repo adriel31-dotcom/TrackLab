@@ -1,0 +1,59 @@
+/* =========================
+   FIND COMPONENT
+========================= */
+
+.find-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:calc(100vh - 75px);
+
+    padding:40px;
+
+}
+
+.find-card{
+
+    width:100%;
+
+    max-width:520px;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:40px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+    border:1px solid #E5E7EB;
+
+}
+
+.find-card h1{
+
+    margin-bottom:12px;
+
+    color:#1F2937;
+
+}
+
+.find-card p{
+
+    color:#6B7280;
+
+    margin-bottom:28px;
+
+    line-height:1.6;
+
+}
+
+#taskIdInput{
+
+    margin-bottom:20px;
+
+}

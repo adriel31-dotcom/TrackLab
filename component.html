@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrackLab - Component Details</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/component.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="header">
+
+        <h1>TrackLab</h1>
+
+        <p>Danfoss Material Movement Tracker</p>
+
+    </div>
+
+    <div class="component-card">
+
+        <h2>Component Details</h2>
+
+        <p class="form-subtitle">
+
+            View and update the current location and status of the component.
+
+        </p>
+
+        <div class="info">
+
+            <!-- Status -->
+
+            <label for="status">Status</label>
+
+            <select id="status">
+
+                <option>Received</option>
+                <option>Incoming Inspection</option>
+                <option>Testing</option>
+                <option>Storage</option>
+                <option>Completed</option>
+                <option>Collected</option>
+
+            </select>
+
+
+            <!-- Component ID -->
+
+            <label for="taskId">Component ID</label>
+
+            <input
+                id="taskId"
+                type="text"
+                readonly>
+
+
+            <!-- TR Number -->
+
+            <label for="trNumber">Test Request (TR) Number</label>
+
+            <input
+                id="trNumber"
+                type="text"
+                readonly>
+
+
+            <!-- Component Description -->
+
+            <label for="componentDescription">Component Description</label>
+
+            <input
+                id="componentDescription"
+                type="text"
+                readonly>
+
+
+            <!-- Requested Task -->
+
+            <label for="requestedTask">Requested Task</label>
+
+            <textarea
+                id="requestedTask"
+                rows="3"
+                readonly></textarea>
+
+
+            <!-- Assigned Lab -->
+
+            <label for="assignedLab">Assigned Lab</label>
+
+            <input
+                id="assignedLab"
+                type="text"
+                readonly>
+
+
+            <!-- Registered By -->
+
+            <label for="registeredBy">Registered By</label>
+
+            <input
+                id="registeredBy"
+                type="text"
+                readonly>
+
+
+            <!-- Current Lab -->
+
+            <label for="currentArea">Current Lab</label>
+
+            <select id="currentArea">
+
+                <option value="">Select Current Lab</option>
+
+                <option>Materials Lab</option>
+
+                <option>Metrology Lab</option>
+
+                <option>Teardown Lab</option>
+
+                <option>General Storage Area</option>
+
+            </select>
+
+
+            <!-- Current Zone -->
+
+            <label for="currentZone">Current Zone</label>
+
+            <select id="currentZone">
+
+                <option value="">Select Current Zone</option>
+
+            </select>
+
+
+            <!-- Comments -->
+
+            <label for="comments">Comments</label>
+
+            <textarea
+                id="comments"
+                rows="4"
+                placeholder="Add comments if required..."></textarea>
+
+
+            <div class="action-buttons">
+
+            <button id="printQRBtn" class="secondary-btn">
+
+                🖨 Print QR
+
+            </button>
+
+            <button id="updateBtn" class="primary-btn">
+
+                💾 Update Component
+ 
+            </button>
+
+            </div>
+
+
+            <h3 style="margin-top:30px;">
+
+                Movement History
+
+            </h3>
+
+            <div id="movementHistory">
+
+                No movement history available.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/component.js"></script>
+
+</body>
+
+</html>
