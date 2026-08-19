@@ -52,11 +52,13 @@ function renderTable(data){
 
     data.forEach(component=>{
 
+        const trackLabUID = component.trackLabUID || component.taskId;
+
         tbody.innerHTML += `
 
-        <tr onclick="openComponent('${component.taskId}')">
+        <tr onclick="openComponent('${trackLabUID}')">
 
-            <td>${component.taskId}</td>
+            <td>${trackLabUID}</td>
 
             <td>${component.trNumber ?? "-"}</td>
 
@@ -71,9 +73,7 @@ function renderTable(data){
         </tr>
 
         `;
-
     });
-
 }
 
 function getStatusBadge(status){
@@ -102,10 +102,10 @@ function getStatusBadge(status){
 
 }
 
-function openComponent(taskId){
+function openComponent(trackLabUID){
 
     window.location.href =
-`${ROUTES.COMPONENT}?taskId=${encodeURIComponent(taskId)}`;
+        `${ROUTES.COMPONENT}?taskId=${encodeURIComponent(trackLabUID)}`;
 
 }
 
@@ -150,21 +150,21 @@ searchBox.addEventListener("input", function () {
 
     const filtered = components.filter(component =>
 
-        (component.taskId || "")
-            .toLowerCase()
-            .includes(query)
+    (component.trackLabUID || component.taskId || "")
+        .toLowerCase()
+        .includes(query)
 
-        ||
+    ||
 
-        (component.trNumber || "")
-            .toLowerCase()
-            .includes(query)
+    (component.trNumber || "")
+        .toLowerCase()
+        .includes(query)
 
-        ||
+    ||
 
-        (component.partDescription || "")
-            .toLowerCase()
-            .includes(query)
+    (component.partDescription || "")
+        .toLowerCase()
+        .includes(query)
 
     );
 
