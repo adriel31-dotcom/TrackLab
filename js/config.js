@@ -47,7 +47,7 @@ const CONFIG = {
 
     DEBUG:false,
 
-    APP_URL:""
+    APP_URL:"https://adriel31-dotcom.github.io/TrackLab"
 
 };
 
