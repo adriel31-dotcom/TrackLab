@@ -1,5 +1,6 @@
 const API_URL = "https://default097464b8069c453e9254c17ec70731.0d.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/85f295a4c62841e9a11652eacbf1ac91/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=_O3uV2eSdn5Jrf-Sy4ToHK9mPxEF5CpzWEmQZAtL_Ww";
 
+const LOCATIONS_API_URL = "https://default097464b8069c453e9254c17ec70731.0d.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/29/workflows/296371772807487b8b1ec608c591b4bb/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=0q_xp7BTCCTBdr4_CXOwEUc9iu-ZXrzfd1zddNpG_bo";
 // ==========================
 // DOM ELEMENTS
 // ==========================
@@ -17,59 +18,92 @@ const comments = document.getElementById("comments");
 
 const registerBtn = document.getElementById("registerBtn");
 
-// ==========================
-// LAB LOCATIONS
-// ==========================
+let locations = [];
 
-const labLocations = {
+async function loadLocations() {
 
-    "Materials Lab": [
-        "Desiccator (Mounts) Area",
-        "Cupboard",
-        "Mount Rack",
-        "Rack",
-        "Cutting Machine Table",
-        "Fume Hood",
-        "MPI Machine",
-        "Mounting Machine Table"
-    ],
+    try {
 
-    "Metrology Lab": [
-        "Cupboard",
-        "Formtracer Table",
-        "3D Scanner Table",
-        "CMM Table Storage Area"
-    ],
+        const response = await fetch(LOCATIONS_API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({})
+        });
 
-    "General Storage Area": [
-        "Storage Shelf"
-    ],
+        if (!response.ok) {
+            throw new Error("Failed to load locations");
+        }
 
-    "Teardown Lab": [
-        "Inspection Table"
-    ]
+        const result = await response.json();
 
-};
+        console.log("Locations API response:", result);
+
+        locations = result;
+        populateAreas();
+
+    } catch (error) {
+
+        console.error("Location loading error:", error);
+
+        alert("Unable to load MMT locations.");
+
+    }
+
+}
 
 // ==========================
 // DYNAMIC LOCATION DROPDOWN
 // ==========================
+
+function populateAreas() {
+
+    currentArea.innerHTML =
+        '<option value="">Select Current Area</option>';
+
+    const areas = [
+        ...new Set(
+            locations
+                .filter(location => location.active === true)
+                .map(location => location.area)
+        )
+    ];
+
+    areas.forEach(area => {
+
+        const option = document.createElement("option");
+
+        option.value = area;
+        option.textContent = area;
+
+        currentArea.appendChild(option);
+
+    });
+
+}
+
 
 currentArea.addEventListener("change", function () {
 
     currentZone.innerHTML =
         '<option value="">Select Current Zone</option>';
 
-    const locations = labLocations[this.value];
+    const selectedArea = this.value;
 
-    if (!locations) return;
+    if (!selectedArea) return;
 
-    locations.forEach(location => {
+    const areaLocations = locations.filter(location =>
+        location.active === true &&
+        location.area === selectedArea
+    );
+
+    areaLocations.forEach(location => {
 
         const option = document.createElement("option");
 
-        option.value = location;
-        option.textContent = location;
+        option.value = location.zone;
+        option.textContent = location.zone;
 
         currentZone.appendChild(option);
 
@@ -203,7 +237,7 @@ registerBtn.addEventListener("click", async function () {
          }
 
         window.location.href =
-        `success.html?taskId=${encodeURIComponent(result.taskId)}&trNumber=${encodeURIComponent(result.trNumber)}`;
+        `success.html?taskId=${encodeURIComponent(result.taskId)}&trackLabUID=${encodeURIComponent(result.trackLabUID)}&trNumber=${encodeURIComponent(result.trNumber)}`;
         }
     catch (error) {
 
@@ -221,3 +255,5 @@ registerBtn.addEventListener("click", async function () {
     }
 
 });
+
+loadLocations();
