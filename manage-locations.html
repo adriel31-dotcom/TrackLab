@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TrackLab - Manage Locations</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/manage-locations.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="dashboard.html" class="logo">
+        ⚙️ <span>TrackLab</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="register.html">
+                Register
+            </a>
+        </li>
+
+        <li>
+            <a href="find.html">
+                Find Component
+            </a>
+        </li>
+
+        <li>
+            <a href="manage-locations.html" class="active">
+                Manage Locations
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<main class="location-page">
+
+    <!-- PAGE HEADER -->
+
+    <section class="location-header">
+
+        <div>
+            <h1>Manage Locations</h1>
+
+            <p>
+                Add, update and manage the locations available in TrackLab.
+            </p>
+        </div>
+
+        <div class="header-actions">
+
+            <button id="refreshBtn" class="secondary-btn">
+                🔄 Refresh
+            </button>
+
+            <button id="addBtn" class="primary-btn">
+                ＋ Add Location
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+
+    <div id="message" class="message" hidden></div>
+
+
+    <!-- ADD / EDIT FORM -->
+
+    <section id="formCard" class="location-form-card" hidden>
+
+        <div class="form-header">
+
+            <div>
+                <h2 id="formTitle">
+                    Add New Location
+                </h2>
+
+                <p>
+                    Enter the details for the new location.
+                </p>
+            </div>
+
+            <button
+                id="cancelBtn"
+                class="close-btn"
+                type="button">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label for="locationCode">
+                    Location Code
+                </label>
+
+                <input
+                    id="locationCode"
+                    type="text"
+                    placeholder="Example: MAT-011">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="area">
+                    Area / Lab
+                </label>
+
+                <input
+                    id="area"
+                    type="text"
+                    list="areaSuggestions"
+                    placeholder="Example: Materials Lab">
+
+                <datalist id="areaSuggestions"></datalist>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="zone">
+                    Zone / Station
+                </label>
+
+                <input
+                    id="zone"
+                    type="text"
+                    placeholder="Example: New Storage Rack">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="active">
+                    Status
+                </label>
+
+                <label class="toggle-row">
+
+                    <input
+                        id="active"
+                        type="checkbox"
+                        checked>
+
+                    <span>
+                        Active
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <div class="form-group full-width">
+
+                <label for="remarks">
+                    Remarks
+                </label>
+
+                <textarea
+                    id="remarks"
+                    rows="3"
+                    placeholder="Optional remarks">
+                </textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-actions">
+
+            <button
+                id="cancelFormBtn"
+                class="secondary-btn"
+                type="button">
+
+                Cancel
+
+            </button>
+
+            <button
+                id="saveBtn"
+                class="primary-btn"
+                type="button">
+
+                Save Location
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOCATIONS TABLE -->
+
+    <section class="locations-card">
+
+        <div class="locations-header">
+
+            <div>
+
+                <h2>
+                    Available Locations
+                </h2>
+
+                <p id="locationCount">
+                    Loading...
+                </p>
+
+            </div>
+
+
+            <input
+                id="search"
+                type="search"
+                placeholder="🔍 Search code, area or zone">
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Location Code
+                        </th>
+
+                        <th>
+                            Area / Lab
+                        </th>
+
+                        <th>
+                            Zone / Station
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="locationsBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/config.js"></script>
+<script src="js/manage-locations.js"></script>
+
+</body>
+
+</html>
