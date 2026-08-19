@@ -2,143 +2,76 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>TrackLab Dashboard</title>
-
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/dashboard.css">
-
 </head>
 
 <body>
-
 <nav class="navbar">
-
     <a href="dashboard.html" class="logo">
         ⚙️ <span>TrackLab</span>
     </a>
-
     <ul class="nav-links">
-
-        <li>
-            <a href="dashboard.html" class="active">
-                Dashboard
-            </a>
-        </li>
-
-        <li>
-            <a href="register.html">
-                Register
-            </a>
-        </li>
-
-        <li>
-            <a href="find.html">
-                Find Component
-            </a>
-        </li>
-
-        <li>
-            <a href="manage-locations.html">
-                Manage Locations
-            </a>
-        </li>
-
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="find.html">Find Component</a></li>
+        <li><a href="manage-locations.html">Manage Locations</a></li>
     </ul>
-
 </nav>
 
-
-
 <main class="dashboard">
-
 <section class="dashboard-header">
-
     <h1>Dashboard</h1>
-
-    <p>
-        Monitor and track all laboratory components from one place.
-    </p>
-
+    <p>Monitor and track all laboratory components from one place.</p>
 </section>
 
 <div class="stats-grid">
-
     <div class="stat-card">
         <div class="stat-title">📦 Total Components</div>
         <div class="stat-value" id="totalCount">0</div>
     </div>
-
     <div class="stat-card">
         <div class="stat-title">🟢 In Progress</div>
         <div class="stat-value" id="testingCount">0</div>
     </div>
-
     <div class="stat-card">
         <div class="stat-title">📥 Received</div>
         <div class="stat-value" id="receivedCount">0</div>
     </div>
-
     <div class="stat-card">
         <div class="stat-title">✅ Completed</div>
         <div class="stat-value" id="completedCount">0</div>
     </div>
-
 </div>
 
 <div class="component-card">
-
 <div class="toolbar">
-
-    <input
-        type="text"
-        id="search"
-        placeholder="🔍 Search TrackLab UID, TR Number or Part Description">
-
-    <button id="refreshBtn">
-        🔄 Refresh
-    </button>
-
+    <input type="text" id="search" placeholder="🔍 Search TrackLab UID, TR Number or Part Description">
+    <button id="refreshBtn">🔄 Refresh</button>
 </div>
 
 <table id="dashboardTable">
-
 <thead>
-
 <tr>
-
     <th>TrackLabUID</th>
-
     <th>TR No.</th>
-
     <th>Part Description</th>
-
     <th>Assigned Lab</th>
-
     <th>Status</th>
-
     <th>Current Area</th>
-
 </tr>
-
 </thead>
-
-<tbody id="dashboardBody">
-
-</tbody>
-
+<tbody id="dashboardBody"></tbody>
 </table>
-
 </div>
-
 </main>
 
 <script src="js/config.js"></script>
 <script src="js/dashboard.js"></script>
 
+<!-- TrackLab Pages deployment refresh -->
 </body>
-
 </html>
