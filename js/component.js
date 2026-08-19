@@ -24,7 +24,8 @@
 
 const params = new URLSearchParams(window.location.search);
 
-const taskId = params.get("taskId");
+const taskId = params.get("trackLabUID") || params.get("taskId");
+const trackLabUID = taskId;
 
 
 // ======================================================
@@ -191,7 +192,7 @@ const ComponentPage = {
 
                     body: JSON.stringify({
 
-                        taskId: taskId
+                        trackLabUID: trackLabUID
 
                     })
 
